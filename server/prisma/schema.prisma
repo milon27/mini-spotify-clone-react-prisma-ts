@@ -19,11 +19,12 @@ model Users {
 }
 
 model Favorites {
-    id      Int    @id @default(autoincrement())
     user    Users  @relation(fields: [userId], references: [id])
     userId  Int
     track   Tracks @relation(fields: [trackId], references: [id])
     trackId Int
+
+    @@unique([userId, trackId])
 }
 
 model Artists {
@@ -35,7 +36,7 @@ model Artists {
 model Albums {
     id        Int      @id @default(autoincrement())
     name      String   @db.VarChar(100)
-    autor     Artists  @relation(fields: [artistsId], references: [id])
+    author    Artists  @relation(fields: [artistsId], references: [id])
     artistsId Int
     Tracks    Tracks[]
 }

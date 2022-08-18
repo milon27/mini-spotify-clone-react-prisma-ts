@@ -18,7 +18,11 @@ export default function MyPageWrapper({ children }: { children: React.ReactNode 
     return (
         <SidebarWrapper
             logoUrl={logo}
-            userName={<p className='rs-text-center'><span className='text-primary'>{user?.name}</span> </p>}
+            userName={<p className='rs-text-center'>
+                <span className='text-primary'>{user?.name}</span>
+                <br />
+                <small>{user?.email}</small>
+            </p>}
             userImageUrl={'https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png'}
             navItems={NavItems}
             onLogOut={logOut}

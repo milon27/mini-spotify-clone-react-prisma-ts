@@ -19,7 +19,12 @@ interface ILoginData {
 export default function Login() {
     const { user, setUser } = useContext(StateContext)
     const nav = useNavigate()
-    const { register, formState: { errors }, getValues, handleSubmit, reset } = useForm<ILoginData>()
+    const { register, formState: { errors }, getValues, handleSubmit, reset } = useForm<ILoginData>({
+        defaultValues: {
+            email: "milon27@g.com",
+            pass: "1234567"
+        }
+    })
     const [loading, setLoading] = useState(false)
 
     const onSubmit = async (data: ILoginData) => {
