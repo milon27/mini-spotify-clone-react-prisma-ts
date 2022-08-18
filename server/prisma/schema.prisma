@@ -1,0 +1,52 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+// define model
+
+model Users {
+    id        Int         @id @default(autoincrement())
+    name      String      @db.VarChar(100)
+    email     String      @unique @db.VarChar(155)
+    password  String
+    createdAt DateTime    @default(now())
+    Favorites Favorites[]
+}
+
+model Favorites {
+    id      Int    @id @default(autoincrement())
+    user    Users  @relation(fields: [userId], references: [id])
+    userId  Int
+    track   Tracks @relation(fields: [trackId], references: [id])
+    trackId Int
+}
+
+model Artists {
+    id     Int      @id @default(autoincrement())
+    name   String   @db.VarChar(100)
+    Albums Albums[]
+}
+
+model Tracks {
+    id        Int         @id @default(autoincrement())
+    title     String      @db.VarChar(100)
+    audioUrl  String
+    album     Albums?     @relation(fields: [albumsId], references: [id])
+    albumsId  Int?
+    Favorites Favorites[]
+}
+
+model Albums {
+    id        Int      @id @default(autoincrement())
+    name      String   @db.VarChar(100)
+    autor     Artists  @relation(fields: [artistsId], references: [id])
+    artistsId Int
+    Tracks    Tracks[]
+}
+
+//Users, Albums:{title,Tracks[]}, Tracks:{title,desc,audio-url,artist:Art_id}, Artists:{name}, Favorites:user-Tracks[]
