@@ -32,6 +32,14 @@ model Artists {
     Albums Albums[]
 }
 
+model Albums {
+    id        Int      @id @default(autoincrement())
+    name      String   @db.VarChar(100)
+    autor     Artists  @relation(fields: [artistsId], references: [id])
+    artistsId Int
+    Tracks    Tracks[]
+}
+
 model Tracks {
     id        Int         @id @default(autoincrement())
     title     String      @db.VarChar(100)
@@ -39,14 +47,6 @@ model Tracks {
     album     Albums?     @relation(fields: [albumsId], references: [id])
     albumsId  Int?
     Favorites Favorites[]
-}
-
-model Albums {
-    id        Int      @id @default(autoincrement())
-    name      String   @db.VarChar(100)
-    autor     Artists  @relation(fields: [artistsId], references: [id])
-    artistsId Int
-    Tracks    Tracks[]
 }
 
 //Users, Albums:{title,Tracks[]}, Tracks:{title,desc,audio-url,artist:Art_id}, Artists:{name}, Favorites:user-Tracks[]

@@ -84,6 +84,19 @@ const AuthController = {
             const u = await req.prisma.users.findUnique({
                 where: {
                     id: req.userId
+                },
+                include: {
+                    Favorites: {
+                        include: {
+                            track: {
+                                select: {
+                                    id: true,
+                                    audioUrl: true,
+                                    title: true
+                                }
+                            }
+                        }
+                    }
                 }
             })
             if (!u) {

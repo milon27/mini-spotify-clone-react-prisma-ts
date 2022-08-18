@@ -10,6 +10,7 @@
     "p-init": "prisma init",
     "p-mg": "prisma migrate dev --name init && prisma generate",
     "p-generate": "prisma generate",
+    "seed": "ts-node src/utils/seed.ts",
     "dev": "nodemon src/app.ts"
   },
   "keywords": [],
