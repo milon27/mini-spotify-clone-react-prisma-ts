@@ -4,7 +4,7 @@
 
 ## Process 1 (using bash)
 
-```
+```bash
 # run server first
 bash server.sh
 
@@ -17,16 +17,16 @@ bash client.sh
 ## Process 2 (manully)
 
 - **Run postgresql container**
-```
+```bash
 docker compose up -d
 ```
 - **Make sure you have pnpm**
-```
+```bash
 npm i -g pnpm
 ```
 
 - **Run server**
-```
+```bash
 # intall deps
 cd server && pnpm install
 
@@ -44,7 +44,7 @@ npm run dev
 ```
 
 - **Run Client**
-```
+```bash
 # intall deps
 cd client && pnpm install
 
