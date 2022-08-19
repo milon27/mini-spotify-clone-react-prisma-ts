@@ -37,6 +37,7 @@ export default function MyPageWrapper({ children }: { children: React.ReactNode 
         >
             <PageWrapper className="p-5">
                 {children}
+                <p className='text-right pt-5 text-sm'>Design & Developed by <a href="https://milon27.com/" className='text-primary'>Milon27.com</a></p>
             </PageWrapper>
         </SidebarWrapper>
     )

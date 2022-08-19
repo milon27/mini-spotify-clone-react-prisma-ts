@@ -13,7 +13,7 @@ const TrackController = {
             })
             res.status(200).json(MyResponse("Track Added To Fav list", true))
         } catch (e) {
-            console.log("addToFav: ", e);
+            // console.log("addToFav: ", e);
             res.status(500).json(MyResponse("already added!"))
         }
     },
