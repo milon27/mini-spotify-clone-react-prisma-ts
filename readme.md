@@ -7,7 +7,7 @@
 ```
 # run server first
 bash server.sh
-# run client after server
+# run client after server in separate terminal
 bash client.sh
 ```
 
