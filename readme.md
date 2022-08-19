@@ -9,6 +9,7 @@
 bash server.sh
 # run client after server in separate terminal
 bash client.sh
+# all done. if you want you can also run without bash script by following below's instruction.
 ```
 
 ## Process 2 (manully)
