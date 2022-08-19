@@ -38,5 +38,5 @@ const doSeed = async () => {
 doSeed().then(() => {
     console.log("seed done")
 }).catch(e => {
-    console.log("some error in seeding.", e)
+    console.log("alredy seeded")
 })
