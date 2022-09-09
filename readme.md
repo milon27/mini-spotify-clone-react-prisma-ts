@@ -1,3 +1,11 @@
+# Features
+
+- user will signup and log in.
+- he can view albums by different artists.
+- he can view all tracks on each album.
+- he can play tracks
+- he can add a track to his favorite list.
+
 # How To Run
 
 ### First clone this repo.
@@ -58,4 +66,20 @@ npm run dev
 ![screenshot](screenshot.png)
 
 
-by [milon27](https://milon27.com/)
+## Used Tech Stack
+**Backend**
+- Express JS
+- Prisma
+- PostgreSQL (using docker container)
+- Typescript
+
+**Frontend**
+- React
+- Vite
+- Context API
+- Axios
+- Typescript
+
+___
+
+## **[Developed by milon27.com](https://milon27.com/)**
